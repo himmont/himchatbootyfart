@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+    <h2>AI Chatbot</h2>
+    <input id="userInput" type="text" placeholder="Ask me anything...">
+    <button onclick="askAI()">Send</button>
+    <p id="response"></p>
+
+    <script>
+        function askAI() {
+            let userInput = document.getElementById("userInput").value;
+
+            puter.ai.chat(userInput, {
+                system: "You are a friendly and helpful AI assistant. Keep responses concise and engaging."
+            })
+            .then(response => {
+                document.getElementById("response").innerText = response;
+            });
+        }
+    </script>
+</body>
+</html>
